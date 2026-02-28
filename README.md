@@ -1,2 +1,3 @@
 # Temporal-Expression-Recognition-in-Legal-Transcripts
 Legal Dataset for Temporal Tagging
+This repository is provided in conjunction with the LREC 2026 paper, "Temporal Expression Recognition in Legal Transcripts".  The Repository contains the data and data annotations used in the paper.  The annotations provide the train, development, and test sets for a large dataset, consisting of transcripts from the O.J. Simpson criminal trial and from a small dataset of seven United States legal transcripts. Specifically, these transcripts originated from: (i) five civil trials, (ii) one civil deposition, and (iii) one additional criminal trial.  
