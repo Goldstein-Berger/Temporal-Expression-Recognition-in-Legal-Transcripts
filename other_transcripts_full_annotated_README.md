@@ -2,7 +2,7 @@
 
 ## Overview
 
-This dataset consists of sentence-level annotations derived from seven legal and scientific
+This dataset consists of sentence-level annotations derived from seven legal 
 transcripts. It is distributed as two types of files:
 
 **Per-transcript files** (`other_transcripts_<case>_all_rows.csv`) — one file per transcript,
@@ -81,13 +81,12 @@ named entity recognition model. They are available for all TR, TST, and UNLABELE
 
 ### Gold NER Annotations (TST rows only)
 
-Gold labels were produced by two human annotators (EJG and Aleksandra) on the 136-sentence test
-set. Where annotators disagreed (14 sentences), a consensus label was used.
+Gold labels were produced by two lawyer annotators on the 136-sentence test set. 
 
 | Column | Description |
 |--------|-------------|
 | `Gold_BIOES_NER_Tags` | Gold BIOES tag sequence as a Python list. Follows the same BIOES scheme as `Silver_BIOES_NER_Tags` and aligns with `tokenized_text`. Populated for TST rows only. |
-| `Sentence_NER_Annotated` | Human-readable annotated sentence with date spans marked using `xxx...xxx` delimiters (e.g., `xxxthe prior fiscal yearxxx`). TST rows only. |
+| `Sentence_NER_Annotated` | Human-readable annotated sentence with date spans marked using `xxx...xxx`, 'yyy....yyy', etc, delimiters (e.g., `xxxthe prior fiscal yearxxx`). TST rows only. |
 
 ### Date Normalization Annotations (TST rows with date expressions)
 
@@ -118,12 +117,6 @@ test set. Sentences without date expressions have `NaN` in these columns.
 
 - Token alignment: `tokenized_text` uses simple whitespace tokenization. All BIOES tag lists are
   aligned to this tokenization — the nth tag corresponds to the nth token.
-- 8 TST sentences were not found in the full pre-culled corpus (due to sentence segmentation
-  differences between the annotated and source files). In the per-transcript files these rows
-  are appended at the end of the relevant case file. They have `NaN` for all full-dataset
-  columns except `Sentence`, `Case_Name`, `Transcript_Date`, and annotation columns.
 - `UNUSED` rows (sentences in the full pre-culled corpus not selected into any split) have
   `NaN` for all annotation columns. They appear in the per-transcript files but not in
   `other_transcripts_annotated_only.csv`.
-- The merge script used to produce these files is included in this repository as
-  `merge_annotations_into_full_dataset_colab.py`.
